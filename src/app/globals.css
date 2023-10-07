@@ -2,26 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+	scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	margin: 0;
+}
+
+.section {
+	display: flex;
+	min-height: 100vh;
+	position: relative;
+}
+
+.image-container {
+	position: relative;
+	display: flex;
+	width: 100%;
+}
+
+.image {
+	height: 100vh;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	mix-blend-mode: multiply;
+	filter: blur(30px);
+	opacity: 0;
+	transition: filter 0.1s ease, opacity 0.1s ease;
+}
+
+.section.active .image {
+	opacity: 1;
+	filter: blur(0);
+}
+
+.scrolling-text {
+	position: absolute; /* Set position to absolute */
+	top: 50%; /* Center vertically */
+
+	opacity: 0;
+	transition: transform 0.2s ease, opacity 0.2s ease;
+	text-align: center; /* Center text horizontally */
+}
+
+.left {
+	left: 20%; /* Center horizontally */
+	transform: translate(
+		-50%,
+		-50%
+	); /* Center both vertically and horizontally */
+}
+
+.right {
+	right: 20%; /* Center horizontally */
+	transform: translate(50%, -50%); /* Center both vertically and horizontally */
+}
+
+.center {
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.section.active .scrolling-text {
+	opacity: 1;
 }
