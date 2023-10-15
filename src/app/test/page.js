@@ -9,6 +9,7 @@ function ImageContainer() {
 	useEffect(() => {
 		function changeImage() {
 			const scroll1 = window.scrollY + window.innerHeight / 3;
+			console.log(scroll1);
 			const scroll = scroll1 + 400;
 			const sections = document.getElementsByClassName("section");
 
@@ -65,7 +66,7 @@ function ImageContainer() {
 				<Section
 					activeSection={activeSection}
 					img="url(image2.jpg)"
-					direction="justify-end"
+					direction="justify-start"
 					text="Tina was in her early 20s. She lived in New York City and was
 					building a promising future for herself in finance."
 				/>
@@ -75,13 +76,55 @@ function ImageContainer() {
 					img="url(image3.jpg)"
 					direction="justify-center"
 					text="Then came the diagnosis. Finding out she had Crohn’s disease,
-					one of two IBD syndromes that affect 10 million people
-					worldwide, wasn’t a surprise considering her family’s history
-					with the disease. But it derailed her life. Tina was in her
-					early 20s. She lived in New York City and was building a
-					promising future for herself in finance"
+					one of two IBD syndromes that affect 10 million people"
+				/>
+				<Section
+					activeSection={activeSection}
+					img="url(image1.jpg)"
+					direction="justify-start"
+					text="Tina had lost her father to Crohn's disease. Now she faced her own
+					diagnosis."
+				/>
+
+				<Section
+					activeSection={activeSection}
+					img="url(image2.jpg)"
+					direction="justify-start"
+					text="Tina was in her early 20s. She lived in New York City and was
+					building a promising future for herself in finance."
+				/>
+
+				<Section
+					activeSection={activeSection}
+					img="url(image3.jpg)"
+					direction="justify-center"
+					text="Then came the diagnosis. Finding out she had Crohn’s disease,
+					one of two IBD syndromes that affect 10 million people"
+				/>
+				<Section
+					activeSection={activeSection}
+					img="url(image1.jpg)"
+					direction="justify-start"
+					text="Tina had lost her father to Crohn's disease. Now she faced her own
+					diagnosis."
+				/>
+
+				<Section
+					activeSection={activeSection}
+					img="url(image2.jpg)"
+					direction="justify-start"
+					text="Tina was in her early 20s. She lived in New York City and was
+					building a promising future for herself in finance."
 				/>
 			</div>
+
+			{/* <Section
+				activeSection={activeSection}
+				img="url(image1.jpg)"
+				direction="justify-start"
+				text="Tina had lost her father to Crohn's disease. Now she faced her own
+					diagnosis."
+			/> */}
 
 			<button
 				className="next-section-button bg-blue-500 p-2 rounded-md text-white"

@@ -13,7 +13,9 @@ body {
 
 .section {
 	display: flex;
-	min-height: 100vh;
+	min-height: 30vh;
+	border: solid 1px black;
+	/* min-height: calc(100vh - 1rem); */
 	position: relative;
 	width: 100%;
 	/* z-index: -1; */
@@ -26,6 +28,7 @@ body {
 }
 
 .image {
+	/* height: calc(100vh - 1rem); */
 	height: 100vh;
 	position: fixed;
 	width: 100%;
@@ -34,9 +37,10 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	mix-blend-mode: multiply;
-	filter: blur(60px);
+	filter: blur(20px);
 	opacity: 0;
-	transition: filter 0.3s ease, opacity 0.3s ease;
+	transition: filter 0s ease, opacity 0s ease;
+	/* transition: filter 0.3s ease, opacity 0.2s ease; */
 	z-index: 1;
 }
 
